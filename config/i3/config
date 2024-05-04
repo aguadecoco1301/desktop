@@ -242,7 +242,7 @@ bindsym $mod+Shift+f exec brave-browser
 exec_always --no-startup-id numlockx on
 
 # Para establecer un fondo escritorio cada vez que se arranque o rearranque i3. "sudo apt install feh"
-exec_always feh --bg-scale ~/Imágenes/fondo1.jpg
+exec_always feh --bg-scale ~/Imagenes/fondo1.jpg
 
 # Hacer que la ventana de redacción de un email en thunderbird se abra en modo flotante "para ver las clases de las ventanas podemos usar xprop"
 #for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
