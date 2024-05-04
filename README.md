@@ -21,19 +21,27 @@ My desktop configuration.
 ###### Tested in Debian 12
 
 1. Install all needed:
-   ```su root
-   apt install sudo git alacritty i3 picom lightdm libnotify i3blocks fonts-noto-color-emoji```
+   ```
+   su root
+   apt install sudo git alacritty i3 picom lightdm libnotify i3blocks fonts-noto-color-emoji
+   ```
 
 2. Reboot and select in session manager "i3"
 
 3. Install configuration:
-   ```git clone https://github.com/aguadecoco1301/desktop
+   ```
+   git clone https://github.com/aguadecoco1301/desktop
    cd desktop
    mv .config ..
-   mv .bashrc ..```
+   mv .bashrc ..
+   ```
 
 4. Restart font cache:
-   ```fc-cache -rv```
+   ```
+   fc-cache -rv
+   ```
 
-5. Restart i3:
-   ```i3-msg restart```
+6. Restart i3:
+   ```
+   i3-msg restart
+   ```
