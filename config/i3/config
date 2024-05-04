@@ -14,7 +14,7 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # El atajo de teclado para abrir una terminal será windows + Enter. Aquí también podemos seleccionar la terminal que queremos que se abra.
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # La combinación de teclas para cerrar una ventana activa es windows+shift+q
 bindsym $mod+Shift+q kill
@@ -150,27 +150,6 @@ bindsym $mod+Tab workspace back_and_forth
 # Atajo de teclado para cerrar completamente la sesión de i3. Una vez cerrada la sesión veremos la ventana de login de Lightdm
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Configuración para redimensionar las ventanas
-mode "resize" {
-        # Arrow bindings
-        bindsym Left resize shrink width 3 px or 3 ppt
-        bindsym Down resize grow height 3 px or 3 ppt
-        bindsym Up resize shrink height 3 px or 3 ppt
-        bindsym Right resize grow width 3 px or 3 ppt
-
-#	bindsym Left+Shift resize shrink width 10 px or 10 ppt
-#	bindsym Down+Shift resize grow height 10 px or 10 ppt
-#	bindsym Up+Shift resize shrink height 10 px or 10 ppt
-#	bindsym Right+Shift resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-# Combinación de teclas para activar el modo redimensionar ventans
-bindsym $mod+r mode "resize"
-
 # Configuración de colores mostrados en pantalla
 set $bg-color	          #2f343f
 set $border-focus	  #5294e2
@@ -232,7 +211,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
-bindsym $mod+Shift+t exec /home/joan/bin/toggletouchpad # toggle touchpad
+#bindsym $mod+Shift+t exec /home/joan/bin/toggletouchpad # toggle touchpad
 
 # Invertir el scroll del trackpad "Solo activar en equipos con trackpad"
 # exec_always --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113 
@@ -247,7 +226,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Atajos de teclado para lanzar programas.
 #bindsym $mod+x exec i3lock --color "$bg-color" (i3lock es otra opción para bloquear la pantalla, para usarlo hay que instalar el paquete i3lock)
-bindsym $mod+Shift+f exec google-chrome
+bindsym $mod+Shift+f exec brave-browser
 #bindsym $mod+Shift+p exec firefox -private
 #bindsym $mod+Shift+b exec blueman-manager
 
@@ -263,7 +242,7 @@ bindsym $mod+Shift+f exec google-chrome
 exec_always --no-startup-id numlockx on
 
 # Para establecer un fondo escritorio cada vez que se arranque o rearranque i3. "sudo apt install feh"
-exec_always feh --bg-scale ~/Imagenes/fondo1.jpg
+exec_always feh --bg-scale ~/Imágenes/fondo1.jpg
 
 # Hacer que la ventana de redacción de un email en thunderbird se abra en modo flotante "para ver las clases de las ventanas podemos usar xprop"
 #for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
@@ -277,14 +256,12 @@ bindsym Print exec --no-startup-id screengrab
 # Combinación de teclas para bloquear la pantalla (Requiere el uso de Lightdm)
 #bindsym $mod+shift+F2 exec dm-tool lock
 
-# Habilitar un compositor para tener transparencias y transiciones suaves. "sudo apt install compton"
-#exec compton -f
-#exec compton --config /home/joan/.config/compton/compton.confexec compton --config /home/joan/.config/compton/compton.conf
+# Habilitar un compositor para tener transparencias y transiciones suaves. "sudo apt install picom"
 exec_always picom -f
 # Esconder la barra de i3 en el caso que lo consideremos oportuno
 bindsym $mod+m bar mode toggle
 # Para cerrar el ordenador presionar la combinación de teclas Ctrl+Alt+S
-bindsym $mod+Shift+p exec pkexec /sbin/poweroff
+bindsym $mod+Shift+p exec pkexec poweroff
 #bindsym $mod+Shift+p exec ~/.config/rofi/scripts/powermenu_t2
 
 exec --no-startup-id lxpolkit
