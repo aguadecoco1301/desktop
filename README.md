@@ -6,7 +6,7 @@ My desktop configuration.
 
 - **Window manager:** i3wm v4.22
 
-- **Status bar:** i3blocks
+- **Status bar:** Polybar
 
 - **Launcher:** i3-dmenu
 
@@ -16,6 +16,8 @@ My desktop configuration.
 
 - **Notify manager:** Dunst
 
+- **Screenshoot:** scrot
+
 # Installing
 
 ###### Tested in Debian 12
@@ -23,7 +25,7 @@ My desktop configuration.
 1. Install all needed:
    ```
    su root
-   apt install sudo git alacritty i3 picom lightdm libnotify i3blocks lxpolkit pavucontrol fonts-noto-color-emoji
+   apt install sudo git alacritty i3 picom lightdm libnotify polybar lxpolkit pavucontrol fonts-noto-color-emoji zscroll playerctl scrot
    ```
 
 2. Reboot and select in session manager "i3"
